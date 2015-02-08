@@ -1,0 +1,61 @@
+
+segment:keyword
+table_name: keywords(name:string,length:150,presence:true)
+table  name:programming_urls
+1.Qa Team(testing team)
+    a.BRD (business requirement document)
+    b.based on brd docuent qa and ui developers used to 
+       design wirefraes.wirefraes is a pdf file
+    c.used to done data modeling
+        a.how any tables we need
+        b.what are  the columns for each table
+        d.what  are  the validations for each column
+        c.design relationship  between table
+ 
+2.developent team
+    1.generate  migration for to create keywords,programming_urls tables
+    2.create model called  keyword.rb,programming_url.rb in app/models/
+    3.we need to write validations in model keyword.rb,programming_url.rb
+    4.run rake db:create   if database does not exits,
+         rake db:migrate   this coand will create tables  in the database
+    5.we need to create keywords_controller.rb , 
+           programming_urls_controller.rb,in app/controllers/
+    6.we nedd to define appropriate actions in cotroller files
+    7.we need to create one folder for each controller in app/views/ directory
+         i.e.  keywords programing_urls
+    8.based on the functionality we need to design views 
+    9.need to give entry in routes.rb
+        a. ex:  resources :keywords,:programming_urls
+              resources will generates 7 crud actions index,show,new,create,update
+                              destroy,edit
+           ex: resources :keywords,:programming_urls, only:[:index,:new,:destroy]
+           ex:  resources :keywords,:programing_urls do 
+                     resources :users
+                end
+       b.collection and member to add extra actions than crud actions
+    10. we need to unit testing
+    11.git add  .
+    12.git commit -am "impleentation of keyword segent done"
+    13.git push origin dbrearc_8
+    14.rspec ---> this command used to run all the rspecs(model,controller,routing)
+    15.create a file in  keyword_spec.rb in spec/models/ directory
+        a.need to write spec validations
+        b.need write spec for associations
+        c.need write spec for table schema
+        d.need write spec for methods defined in the model
+    16 to test model spec 
+          a. rspec spec/models/keyword_spec.rb 
+          b.rspec spec/models   -->  this is used run specs of all models
+   17. create a file in spec/controllers called keywords_controller_spec.rb
+        a.write  spec for  all controller actions
+        b.spec for all private methods
+        c. to run rspec  spec/controlles/keywords_controllers_spec.rb
+        d. rspec controllers/
+   18.create file in spec/routing/kewords_routing_spec.rb
+       a.write spec for routable routes
+       b. write spec for non-routable routes
+       c.write spec for collection and member actions
+       d.rspec  spec/routing/keyword_routing_spec.rb
+       e.rpsec spec/routing
+   19.rspec
+3.manageent  team
